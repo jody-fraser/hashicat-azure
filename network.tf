@@ -2,16 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "myresourcegroup" {
-  name     = "${var.prefix}-workshop"
-  location = var.location
-
-  tags = {
-    environment = "Production"
-  }
-}
-
-module "network" {module "network" {
+module "network" {
   source  = "app.terraform.io/dany-test/network/azurerm"
   version = "5.1.0"
   resource_group_name = azurerm_resource_group.myresourcegroup.name
