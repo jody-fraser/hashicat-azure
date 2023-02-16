@@ -1,6 +1,3 @@
-provider "azurerm" {
-  features {}
-}
 
 module "network" {
   source  = "app.terraform.io/dany-test/network/azurerm"
